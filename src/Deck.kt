@@ -1,4 +1,7 @@
-import java.util.*
+import Config.CLUB
+import Config.DIAMOND
+import Config.HEART
+import Config.SPADE
 
 /**
  * Created by Nezneika on 3/18/18.
@@ -15,10 +18,10 @@ class Deck {
     val cards: Array<Card> = Array(52, { Card(it % suitValue, getSuit(it)) })
 
     private fun getSuit(i: Int) = when (i / suitValue) {
-        0 -> "Club"
-        1 -> "Diamond"
-        2 -> "Heart"
-        else -> "Spade"
+        0 -> CLUB
+        1 -> DIAMOND
+        2 -> HEART
+        else -> SPADE
     }
 
     // card left in deck which will be draw out
