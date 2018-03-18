@@ -1,3 +1,5 @@
+import java.util.*
+
 /**
  * Created by Nezneika on 3/18/18.
  */
@@ -18,6 +20,28 @@ class Deck {
         2 -> "Heart"
         else -> "Spade"
     }
+
+    // card left in deck which will be draw out
+    var cardsInDeck: MutableList<Card> = cards.toMutableList()
+
+    fun drawCard(): Card = cardsInDeck.removeAt(0)
+
+    /**
+     * reset the deck with 52 cards and shuffle for ready to play
+     */
+    fun reset(): MutableList<Card> {
+        cardsInDeck = cards.toMutableList()
+        return shuffle()
+    }
+
+    /**
+     * Shuffle the collection for random order
+     */
+    fun shuffle(): MutableList<Card> {
+        cardsInDeck.shuffle()
+        return cardsInDeck
+    }
+
 
 //    val cards: Array<Card> = Array(52,
 //            // use anonymous function

@@ -8,10 +8,16 @@ fun main(args: Array<String>) {
     val card = Card()
     log(card)
 
-    logg("IRnit the deck")
+    logg("Init the deck")
     val deck = Deck()
     // list up all cards in the deck
     deck.cards.forEach { log(it) }
+
+    logg("shuffle the deck")
+    deck.shuffle().forEach { log(it) }
+
+    logg("reset the deck")
+    deck.reset().forEach { log(it) }
 }
 
 fun log(string: Any) {
