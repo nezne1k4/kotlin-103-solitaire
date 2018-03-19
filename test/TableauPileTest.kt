@@ -1,6 +1,6 @@
-import Config.CLUBS
-import Config.HEARTS
-import Config.SPADES
+import model.Suits.CLUBS
+import model.Suits.SPADES
+import model.Suits.HEARTS
 import model.Card
 import model.TableauPile
 import org.junit.Test

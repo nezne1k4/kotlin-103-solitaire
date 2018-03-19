@@ -4,7 +4,7 @@ package model
  * Created by Nezneika on 3/18/18.
  */
 
-class FoundationPile(val suit: String) {
+class FoundationPile(val suit: Suits) {
     val cards: MutableList<Card> = mutableListOf()
 
     /**

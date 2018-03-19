@@ -1,9 +1,9 @@
 package model
 
-import Config.CLUBS
-import Config.DIAMONDS
-import Config.HEARTS
-import Config.SPADES
+import model.Suits.CLUBS
+import model.Suits.SPADES
+import model.Suits.HEARTS
+import model.Suits.DIAMONDS
 import Config.SUIT_AMOUNT
 
 /**

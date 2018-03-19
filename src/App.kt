@@ -25,35 +25,21 @@ fun main(args: Array<String>) {
 //    GamePresenter.onDeckTap()
 //    GameModel.debugPrint()
 
-    testGame()
+    botPlaysGame()
 }
 
-fun testGame() {
-    // arrange
-    var numGames = 0
-    val maxGames = 1
+fun botPlaysGame() {
 
-    // act
-    for (i in 1..maxGames) {
-        numGames++
-        GameModel.resetGame()
-        for (j in 1..100) {
-            GamePresenter.onDeckTap()
-            GamePresenter.onWasteTap()
-            GameModel.tableauPiles.forEachIndexed { index, tableauPile ->
-                GamePresenter.onTableauTap(index, tableauPile.cards.lastIndex)
-            }
-            // print deck for each step
-            GameModel.debugPrint()
+    GameModel.resetGame()
+    for (j in 1..1000) {
+        GamePresenter.onDeckTap()
+        GamePresenter.onWasteTap()
+        GameModel.tableauPiles.forEachIndexed { index, tableauPile ->
+            GamePresenter.onTableauTap(index, tableauPile.cards.lastIndex)
         }
-        if (GameModel.foundationPiles[0].cards.size == 13) {
-            break
-        }
+        // print deck for each step
+        GameModel.debugPrint()
     }
-
-    // assert
-    //GameModel.debugPrint()
-    //println("# Games: $numGames")
 }
 
 fun log(string: Any) {

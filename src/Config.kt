@@ -1,3 +1,8 @@
+import model.Suits.CLUBS
+import model.Suits.SPADES
+import model.Suits.HEARTS
+import model.Suits.DIAMONDS
+
 /**
  * Created by Nezneika on 3/18/18.
  */
@@ -12,11 +17,6 @@ Definition
 */
 
 object Config {
-    const val CLUBS = "Club"
-    const val SPADES = "Spade"
-    const val HEARTS = "Heart"
-    const val DIAMONDS = "Diamond"
-
     const val SUIT_AMOUNT = 13
 
     val BLACK_SUITS = arrayOf(CLUBS, SPADES)
