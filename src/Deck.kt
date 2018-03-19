@@ -1,7 +1,8 @@
-import Config.CLUB
-import Config.DIAMOND
-import Config.HEART
-import Config.SPADE
+import Config.CLUBS
+import Config.DIAMONDS
+import Config.HEARTS
+import Config.SPADES
+import Config.SUIT_AMOUNT
 
 /**
  * Created by Nezneika on 3/18/18.
@@ -10,18 +11,15 @@ import Config.SPADE
 // Deck is a collection of 52 specific cards
 
 class Deck {
-    // each suit has 13 cards
-    // how to declare constant?
-    private val suitValue = 13
 
     // define the cards with lambda expression
-    val cards: Array<Card> = Array(52, { Card(it % suitValue, getSuit(it)) })
+    val cards: Array<Card> = Array(52, { Card(it % SUIT_AMOUNT, getSuit(it)) })
 
-    private fun getSuit(i: Int) = when (i / suitValue) {
-        0 -> CLUB
-        1 -> DIAMOND
-        2 -> HEART
-        else -> SPADE
+    private fun getSuit(i: Int) = when (i / SUIT_AMOUNT) {
+        0 -> CLUBS
+        1 -> DIAMONDS
+        2 -> HEARTS
+        else -> SPADES
     }
 
     // card left in deck which will be draw out

@@ -12,8 +12,14 @@ Definition
 */
 
 object Config {
-    val CLUB = "Club"
-    val DIAMOND = "Diamond"
-    val HEART = "Heart"
-    val SPADE = "Spade"
+    const val CLUBS = "Club"
+    const val SPADES = "Spade"
+    const val HEARTS = "Heart"
+    const val DIAMONDS = "Diamond"
+
+    const val SUIT_AMOUNT = 13
+
+    val BLACK_SUITS = arrayOf(CLUBS, SPADES)
+    val RED_SUITS = arrayOf(DIAMONDS, HEARTS)
+
 }
