@@ -112,4 +112,11 @@ object GameModel {
         return false
     }
 
+    /**
+     * Print the last cards in deck
+     */
+    fun debugPrint() {
+        println(deck.cardsInDeck.last())
+    }
+
 }
