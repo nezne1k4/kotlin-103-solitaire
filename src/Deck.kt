@@ -25,6 +25,9 @@ class Deck {
     // card left in deck which will be draw out
     var cardsInDeck: MutableList<Card> = cards.toMutableList()
 
+    /**
+     * Remove a Card from Deck and throw it to User / TableauPile
+     */
     fun drawCard(): Card = cardsInDeck.removeAt(0)
 
     /**

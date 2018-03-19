@@ -5,6 +5,9 @@
 class FoundationPile(val suit: String) {
     val cards: MutableList<Card> = mutableListOf()
 
+    /**
+     * Reset to begin new game
+     */
     fun reset() {
         cards.clear()
     }
