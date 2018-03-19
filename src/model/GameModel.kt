@@ -1,3 +1,5 @@
+package model
+
 import Config.CLUBS
 import Config.DIAMONDS
 import Config.HEARTS
@@ -7,10 +9,12 @@ import Config.SPADES
  * Created by Nezneika on 3/18/18.
  */
 
-class GameModel(val deck: Deck) {
+// game model is now singleton / static
+object GameModel {
 
+    val deck = Deck()
     // is this the temp pile ? must it have a maximum slot?
-    // no, wastePile is the cards which already went through, it is later put back to Deck
+    // no, wastePile is the cards which already went through, it is later put back to model.Deck
     val wastePile: MutableList<Card> = mutableListOf()
 
     val foundationPiles = arrayOf(
@@ -23,7 +27,7 @@ class GameModel(val deck: Deck) {
     val tableauPiles = Array(7, { TableauPile() })
 
     /**
-     * Reset Deck, wastePile, 4 foundationPiles, and 7 tableauPiles
+     * Reset model.Deck, wastePile, 4 foundationPiles, and 7 tableauPiles
      */
     fun resetGame() {
         wastePile.clear()
@@ -37,8 +41,8 @@ class GameModel(val deck: Deck) {
     }
 
     /**
-     * Tap to open last Card in Deck
-     * if Deck is empty, move all from wastePile like a loop
+     * Tap to open last model.Card in model.Deck
+     * if model.Deck is empty, move all from wastePile like a loop
      */
     fun onDeckTap() {
         if (deck.cardsInDeck.size > 0) {

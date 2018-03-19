@@ -1,3 +1,5 @@
+package model
+
 /**
  * Created by Nezneika on 3/18/18.
  */

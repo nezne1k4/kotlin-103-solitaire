@@ -1,3 +1,5 @@
+package model
+
 import Config.BLACK_SUITS
 import Config.RED_SUITS
 
@@ -8,13 +10,13 @@ import Config.RED_SUITS
 class TableauPile(var cards: MutableList<Card> = mutableListOf()) {
 
     init {
-        // all last card in a TableauPile is faceUp
+        // all last card in a model.TableauPile is faceUp
         if (cards.size > 0)
             cards.last().faceUp = true
     }
 
     /**
-     * Move card from another TableauPile to this TableauPile
+     * Move card from another model.TableauPile to this model.TableauPile
      */
     fun addCards(newCards: MutableList<Card>): Boolean {
         if (cards.size > 0) {
@@ -32,7 +34,7 @@ class TableauPile(var cards: MutableList<Card> = mutableListOf()) {
     }
 
     fun removeCards(tappedIndex: Int) {
-        // remove a list of cards in the TableauPile
+        // remove a list of cards in the model.TableauPile
         // of course, the condition for tappedIndex is that the faceUp = true, needed check before calling removeCards()
         for (i in tappedIndex..cards.lastIndex) {
             //cards.removeAt(i)

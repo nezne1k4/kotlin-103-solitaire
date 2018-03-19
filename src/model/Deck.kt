@@ -1,3 +1,5 @@
+package model
+
 import Config.CLUBS
 import Config.DIAMONDS
 import Config.HEARTS
@@ -8,7 +10,7 @@ import Config.SUIT_AMOUNT
  * Created by Nezneika on 3/18/18.
  */
 
-// Deck is a collection of 52 specific cards
+// model.Deck is a collection of 52 specific cards
 
 class Deck {
 
@@ -26,7 +28,7 @@ class Deck {
     var cardsInDeck: MutableList<Card> = cards.toMutableList()
 
     /**
-     * Remove a Card from Deck and throw it to User / TableauPile
+     * Remove a model.Card from model.Deck and throw it to User / model.TableauPile
      */
     fun drawCard(): Card = cardsInDeck.removeAt(0)
 
@@ -35,6 +37,7 @@ class Deck {
      */
     fun reset(): MutableList<Card> {
         cardsInDeck = cards.toMutableList()
+        cardsInDeck.forEach { it.faceUp = false }
         return shuffle()
     }
 
@@ -47,9 +50,9 @@ class Deck {
     }
 
 
-//    val cards: Array<Card> = Array(52,
+//    val cards: Array<model.Card> = Array(52,
 //            // use anonymous function
-//            fun(i: Int): Card {
+//            fun(i: Int): model.Card {
 //                val value = i % suitValue
 //                val suit = when(i/suitValue) {
 //                    0 -> "Club"
@@ -57,7 +60,7 @@ class Deck {
 //                    2 -> "Heart"
 //                    else -> "Spade"
 //                }
-//                return Card(value, suit)
+//                return model.Card(value, suit)
 //            }
 //    )
 }

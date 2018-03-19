@@ -1,3 +1,6 @@
+import model.Card
+import model.Deck
+
 /**
  * Created by Nezneika on 3/18/18.
  */
