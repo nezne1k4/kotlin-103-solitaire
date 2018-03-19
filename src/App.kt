@@ -1,5 +1,3 @@
-import model.Card
-import model.Deck
 import model.GameModel
 
 /**
@@ -23,8 +21,39 @@ fun main(args: Array<String>) {
 //    logg("reset the deck")
 //    deck.reset().forEach { log(it) }
 
-    GameModel.resetGame()
-    GameModel.debugPrint()
+//    GameModel.resetGame()
+//    GamePresenter.onDeckTap()
+//    GameModel.debugPrint()
+
+    testGame()
+}
+
+fun testGame() {
+    // arrange
+    var numGames = 0
+    val maxGames = 1
+
+    // act
+    for (i in 1..maxGames) {
+        numGames++
+        GameModel.resetGame()
+        for (j in 1..100) {
+            GamePresenter.onDeckTap()
+            GamePresenter.onWasteTap()
+            GameModel.tableauPiles.forEachIndexed { index, tableauPile ->
+                GamePresenter.onTableauTap(index, tableauPile.cards.lastIndex)
+            }
+            // print deck for each step
+            GameModel.debugPrint()
+        }
+        if (GameModel.foundationPiles[0].cards.size == 13) {
+            break
+        }
+    }
+
+    // assert
+    //GameModel.debugPrint()
+    //println("# Games: $numGames")
 }
 
 fun log(string: Any) {

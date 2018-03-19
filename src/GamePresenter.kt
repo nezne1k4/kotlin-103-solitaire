@@ -4,7 +4,7 @@ import model.GameModel
  * Created by Nezneika on 3/19/18.
  */
 
-class GamePresenter {
+object GamePresenter {
 
     var view: GameView? = null
 
